@@ -1,0 +1,24 @@
+Ev satın almayı tasarlıyoruz. Evin fiyatı, gelir, peşinat oranı ve tasarruf oranımıza bağlı olarak satın
+alacağımız evin peşinatını ne kadar sürede biriktirebileceğimizi hesaplamak istiyoruz.
+
+
+1. Sabit veriler belirtilir ve toplanması gereken peşinat miktarı belirlenir.
+2. Kullanıcı tarafından sağlanan veriler input beyanı ile alınır.
+3. Her ay tasarruf yapılır ve peşinat miktarı toplanana dek devam eder.
+4. Bu tasarruf yapma işi içinde kaç ay olduğunu görmek için bir sayma değişkeni kullanılır.
+
+total_cost  = 1.000.000
+portion_down_payment = 0.25
+down_payment = total_cost * portion_down_payment
+current_savings = 0
+r = 0.04
+portion_saved = 0.1
+annual_salary = float(input("Please enter annual salary:"))
+epsilon = 100
+month_count = 0
+
+while down_payment > current_savings:
+	current_savings = current savings*(1 + r/12) + (annual_salary)/12*portion_saved
+	month_count + = 1
+print(month_count, current_savings)
+	
