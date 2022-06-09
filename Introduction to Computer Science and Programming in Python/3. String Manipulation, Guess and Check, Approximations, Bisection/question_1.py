@@ -3,13 +3,12 @@
 #1. Section: variables are defined
 cube = float(input("Please enter a number:"))
 epsilon = float(input("Please enter a margin error value:"))
-guess = 0
 num_guesses = 0
 low = 0
 high = cube
 guess = (high + low)/2
 #2. Section, case cube > 1 already exists in the slide
-if cube > 1:
+if cube >= 1:
     while abs(guess**3 - cube) >= epsilon:
         if(guess**3 > cube):
             high = guess
@@ -28,10 +27,10 @@ elif cube < 0:
         num_guesses += 1
         guess = (high + low)/2.0
     guess = guess*(-1)
+# 4. Section: for case 0
 elif cube == 0:
     print('Root of cube is', guess)
-elif cube == 1:
-    print('Root of cube is', guess)
+# 5. Section: for case 0 <cube< 1
 else:
     low = cube
     high = 1
