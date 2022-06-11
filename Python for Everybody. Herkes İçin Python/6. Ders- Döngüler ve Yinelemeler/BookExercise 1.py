@@ -4,8 +4,9 @@ count = 0
 while True:
   data = input('Enter a number:')
   if data == "done": break
-  fdata = float(data)
+
   try:
+      fdata = float(data)
       total = total + fdata
       count = count+1
       avg = total/count
