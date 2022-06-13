@@ -19,3 +19,15 @@ Enter file: romeo.txt
 'sun', 'the', 'through', 'what', 'window',
 'with', 'yonder']
 '''
+uniqueWords = []
+
+fhand = open("romeo.txt")
+
+for line in fhand:
+    words = line.split()
+
+    for new in words:
+        if  new not in uniqueWords:
+            uniqueWords.append(new)
+
+print(uniqueWords)
