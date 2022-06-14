@@ -24,13 +24,15 @@ Enter file: romeo.txt
 '''
 uniqueWords = []
 
-fhand = open("romeo.txt")
 
-for line in fhand:
-    words = line.split()
+try:
+    fhand = open("romeo.txt")
+    for line in fhand:
+        words = line.split()
 
-    for new in words:
-        if  new not in uniqueWords:
-            uniqueWords.append(new)
-
+        for new in words:
+            if  new not in uniqueWords:
+                uniqueWords.append(new)
+except:
+    print("File cannot be opened")
 print(uniqueWords)
