@@ -1,5 +1,5 @@
 # Problem Set 2, hangman.py
-# Name:
+# Name: Alperen Demircioglu
 # Collaborators:
 # Time spent:
 
@@ -33,7 +33,6 @@ def load_words():
     return wordlist
 
 
-
 def choose_word(wordlist):
     """
     wordlist (list): list of words (strings)
@@ -61,8 +60,14 @@ def is_word_guessed(secret_word, letters_guessed):
       False otherwise
     '''
     # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
-
+    count = 0
+    for i in secret_word:
+        if i not in letters_guessed:
+            return False
+        else:
+            count += 1
+    if count == len(secret_word+1):
+        return True
 
 
 def get_guessed_word(secret_word, letters_guessed):
@@ -73,9 +78,13 @@ def get_guessed_word(secret_word, letters_guessed):
       which letters in secret_word have been guessed so far.
     '''
     # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
-
-
+    progress = ""
+    for i in secret_word:
+        if i not in letters_guessed:
+            progress = program + ("_")
+        else:
+            progress = progress + i
+    return progress
 
 def get_available_letters(letters_guessed):
     '''
@@ -84,7 +93,15 @@ def get_available_letters(letters_guessed):
       yet been guessed.
     '''
     # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    #  variable for letter a to z in lower case
+    alphabet = string.ascii_lowercase
+    #  string where available letters will be concatenated
+    available_letters = ''
+
+    for letter in alphabet:
+        if letter not in letters_guessed:
+            available_letters += letter
+    return available_letters
 
 
 
@@ -98,10 +115,10 @@ def hangman(secret_word):
       letters the secret_word contains and how many guesses s/he starts with.
 
     * The user should start with 6 guesses
-
+      
     * Before each round, you should display to the user how many guesses
       s/he has left and the letters that the user has not yet guessed.
-
+      print(guess)
     * Ask the user to supply one guess per round. Remember to make
       sure that the user puts in a letter!
 
